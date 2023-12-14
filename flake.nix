@@ -68,6 +68,11 @@
           description = "Go (Golang) development environment";
         };
 
+        terraform = {
+          path = ./terraform;
+          description = "Terraform development environment";
+        };
+
       };
     };
 }

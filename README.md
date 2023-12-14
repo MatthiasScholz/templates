@@ -3,6 +3,11 @@
 Collection of templates to get started quickly and in a reproducible way.
 Leverages: direnv, nix
 
+Supported:
+
+- go
+- terraform
+
 ## direnv with nix flakes
 
 ``` sh

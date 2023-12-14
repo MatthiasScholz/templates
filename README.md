@@ -23,13 +23,14 @@ Using Nix Home Manager to install `nix-direnv`
 
 ## Develop Templates
 
-- [ ] TODO Check
-
 ``` sh
+# With direnv
+cd flakes/go
+
+# Without direnv
 cd flakes/go
 nix develop
 ```
-
 
 ## References
 

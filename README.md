@@ -28,6 +28,10 @@ Using Nix Home Manager to install `nix-direnv`
 
 ## Develop Templates
 
+1. Create a new folder with the name of the template within `./flakes`.
+1. Develop and test template as described below.
+1. Register template in `./flake.nix`.
+
 ``` sh
 # With direnv
 cd flakes/go

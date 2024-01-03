@@ -60,6 +60,7 @@
 
     //
 
+    # NOTE Register new templates here
     {
       templates = rec {
 

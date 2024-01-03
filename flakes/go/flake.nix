@@ -21,7 +21,10 @@
             go
 
             # goimports, godoc, etc.
+            gopls
             gotools
+            gotestsum
+            delve
 
             # https://github.com/golangci/golangci-lint
             golangci-lint

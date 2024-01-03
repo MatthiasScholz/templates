@@ -74,11 +74,16 @@
           description = "Terraform development environment";
         };
 
+        terraform-provider = {
+          path = ./flakes/terraform-provider;
+          description = "Terraform Provider development tooling";
+        };
 
         encore = {
           path = ./flakes/encore;
           description = "Encore SDK and tooling";
         };
+
       };
     };
 }

@@ -65,12 +65,12 @@
       templates = rec {
 
         go = {
-          path = ./go;
+          path = ./flakes/go;
           description = "Go (Golang) development environment";
         };
 
         terraform = {
-          path = ./terraform;
+          path = ./flakes/terraform;
           description = "Terraform development environment";
         };
 

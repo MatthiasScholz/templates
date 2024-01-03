@@ -74,6 +74,11 @@
           description = "Terraform development environment";
         };
 
+
+        encore = {
+          path = ./flakes/encore;
+          description = "Encore SDK and tooling";
+        };
       };
     };
 }

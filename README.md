@@ -12,13 +12,13 @@ Supported:
 
 ``` sh
 # Use flake directly - composable
-echo "use flake \"github:the-nix-way/dev-templates?dir=flakes/go\"" >> .envrc
+echo "use flake \"github:matthiasscholz/templates?dir=flakes/go\"" >> .envrc
 direnv allow
 ```
 
 ``` sh
 # Use flake as a starting point - tailor
-nix flake init -t "github:the-nix-way/dev-templates#go"
+nix flake init -t "github:matthiasscholz/templates#go"
 direnv allow
 ```
 

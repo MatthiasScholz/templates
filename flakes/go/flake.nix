@@ -28,6 +28,9 @@
 
             # https://github.com/golangci/golangci-lint
             golangci-lint
+
+            # go-template based generator
+            gotemplate
           ];
         };
       });

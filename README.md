@@ -9,6 +9,11 @@ Supported:
 - terraform
 - tools
 
+## Tasks
+
+- [ ] add [Github Action](https://github.com/DeterminateSystems/update-flake-lock) to keep locks up-to-date
+- [ ] make setup for encore work
+
 ## direnv with nix flakes
 
 ``` sh

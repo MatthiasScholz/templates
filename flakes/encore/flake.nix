@@ -4,20 +4,22 @@
   inputs = {
      nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
      encorePkg.url = "path:./package";
-     flake-utils.url = "github:numtide/flake-utils";
   };
 
-                             # V Add this one. Order matters.
-  outputs = { self, nixpkgs, encorePkg, flake-utils }:
-    flake-utils.lib.eachSystem [ "x86_64-darwin" ] (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-        encore = encorePkg.defaultPackage.${system}; # For convenience
-      in {
-        devShell = pkgs.mkShell rec {
-          buildInputs = [
-            encore
+  outputs = { self, nixpkgs, encorePkg }:
+    let
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
+        pkgs = import nixpkgs { inherit system; };
+      });
+    in
+    {
+      devShells = forEachSupportedSystem ({ pkgs }: {
+        default = pkgs.mkShell {
+          packages = with pkgs; [
+            # FIXME not working - check diff encore
           ];
         };
       });
+    };
 }

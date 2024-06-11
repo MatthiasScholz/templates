@@ -1,0 +1,58 @@
+{
+  "nodes": {
+    "encorePkg": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-K6y3nrc/ENrGm10vrnaa8nMliNrAqbaegOI812yHcDE=",
+        "path": "./package",
+        "type": "path"
+      },
+      "original": {
+        "path": "./package",
+        "type": "path"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1702578284,
+        "narHash": "sha256-gGNEJDUtKWvGUA9RsQwfbL3z9e4wMOHhslvbUG3qClE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "fd7914c96f7c006047e0154dd239aa2396478094",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1717893485,
+        "narHash": "sha256-WMU6ZRZrBgEUDIF0siu2aIyVAXcxfElSwzZtS/mSpN4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "3bcedce9f4de37570242faf16e1e143583407eab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "encorePkg": "encorePkg",
+        "nixpkgs": "nixpkgs_2"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

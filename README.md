@@ -7,6 +7,7 @@ Supported:
 
 - go
 - terraform
+- tools
 
 ## direnv with nix flakes
 

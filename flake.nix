@@ -84,6 +84,11 @@
           description = "Encore SDK and tooling";
         };
 
+        tools = {
+          path = ./flakes/tools;
+          description = "Common tooling";
+        };
+
       };
     };
 }

@@ -21,10 +21,15 @@
             go
 
             # goimports, godoc, etc.
-            gopls
             gotools
             gotestsum
             delve
+            # Emacs integration
+            gopls
+            gomodifytags
+            gotests
+            gore
+            guru
 
             # https://github.com/golangci/golangci-lint
             golangci-lint

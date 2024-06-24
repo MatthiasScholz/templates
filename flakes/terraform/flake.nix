@@ -23,6 +23,8 @@
             # Static code analysis
             tflint
             tfsec
+            # Helper
+            hcledit
           ];
 
           # NOTE Not supported by direnv!

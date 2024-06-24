@@ -29,7 +29,6 @@
             gomodifytags
             gotests
             gore
-            guru
 
             # https://github.com/golangci/golangci-lint
             golangci-lint

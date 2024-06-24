@@ -1,2 +1,2 @@
 update:
-   nix flake update
+	nix flake update

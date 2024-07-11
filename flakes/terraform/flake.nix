@@ -31,6 +31,8 @@
               tfsec
               # Helper
               hcledit
+              # Custom policies
+              conftest
             ];
 
             # NOTE Not supported by direnv!

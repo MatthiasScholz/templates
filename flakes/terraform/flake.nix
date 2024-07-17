@@ -28,7 +28,10 @@
               terramate
               # Static code analysis
               tflint
+              # Deprecated
               tfsec
+              # Superseeded by
+              trivy
               # Helper
               hcledit
               # Custom policies

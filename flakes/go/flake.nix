@@ -48,6 +48,7 @@
 
               # profiling
               pprof
+              graphviz
             ];
           };
         }

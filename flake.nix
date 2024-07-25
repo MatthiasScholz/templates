@@ -4,10 +4,12 @@
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
       overlays = [
-        (final: prev:
+        (
+          final: prev:
           let
             exec = pkg: "${prev.${pkg}}/bin/${pkg}";
           in
@@ -38,57 +40,79 @@
                 )
               done
             '';
-          })
+          }
+        )
       ];
-      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
-        pkgs = import nixpkgs { inherit overlays system; };
-      });
+      supportedSystems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+      forEachSupportedSystem =
+        f:
+        nixpkgs.lib.genAttrs supportedSystems (
+          system: f { pkgs = import nixpkgs { inherit overlays system; }; }
+        );
     in
     {
-      devShells = forEachSupportedSystem ({ pkgs }: {
-        default = pkgs.mkShell {
-          packages = with pkgs; [ format update ];
-        };
-      });
+      devShells = forEachSupportedSystem (
+        { pkgs }:
+        {
+          default = pkgs.mkShell {
+            packages = with pkgs; [
+              format
+              update
+            ];
+          };
+        }
+      );
 
-      packages = forEachSupportedSystem ({ pkgs }: rec {
-        default = dvt;
-        inherit (pkgs) dvt;
-      });
+      packages = forEachSupportedSystem (
+        { pkgs }:
+        rec {
+          default = dvt;
+          inherit (pkgs) dvt;
+        }
+      );
     }
 
     //
 
-    # NOTE Register new templates here
-    {
-      templates = rec {
+      # NOTE Register new templates here
+      {
+        templates = rec {
 
-        go = {
-          path = ./flakes/go;
-          description = "Go (Golang) development environment";
+          go = {
+            path = ./flakes/go;
+            description = "Go (Golang) development environment";
+          };
+
+          terraform = {
+            path = ./flakes/terraform;
+            description = "Terraform development environment";
+          };
+
+          terraform-provider = {
+            path = ./flakes/terraform-provider;
+            description = "Terraform Provider development tooling";
+          };
+
+          encore = {
+            path = ./flakes/encore;
+            description = "Encore SDK and tooling";
+          };
+
+          tools = {
+            path = ./flakes/tools;
+            description = "Common tooling";
+          };
+
+          aws = {
+            path = ./flakes/aws;
+            description = "AWS development environment";
+          };
+
         };
-
-        terraform = {
-          path = ./flakes/terraform;
-          description = "Terraform development environment";
-        };
-
-        terraform-provider = {
-          path = ./flakes/terraform-provider;
-          description = "Terraform Provider development tooling";
-        };
-
-        encore = {
-          path = ./flakes/encore;
-          description = "Encore SDK and tooling";
-        };
-
-        tools = {
-          path = ./flakes/tools;
-          description = "Common tooling";
-        };
-
       };
-    };
 }

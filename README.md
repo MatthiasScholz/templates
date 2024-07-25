@@ -8,6 +8,7 @@ Supported:
 - go
 - terraform
 - tools
+- aws
 
 ## Tasks
 

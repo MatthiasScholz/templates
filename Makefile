@@ -1,6 +1,12 @@
+define flake-update
+	$(eval flake=$(1))
+	cd flakes/$(flake) && nix flake update
+endef
+
 upgrade:
-	cd flakes/aws && nix flake update
-	cd flakes/go && nix flake update
-	cd flakes/terraform && nix flake update
-	cd flakes/tools && nix flake update
+	$(call flake-update, aws)
+	$(call flake-update, go)
+	$(call flake-update, opentofu)
+	$(call flake-update, terraform)
+	$(call flake-update, tools)
 	nix flake update

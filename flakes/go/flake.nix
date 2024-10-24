@@ -29,6 +29,9 @@
             packages = with pkgs; [
               # go (specified by overlay)
               go
+              # Reload go on changes
+              # https://github.com/bokwoon95/wgo
+              wgo
 
               # goimports, godoc, etc.
               gotools

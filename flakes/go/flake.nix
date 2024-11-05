@@ -52,6 +52,10 @@
               # profiling
               pprof
               graphviz
+
+              # debugging with emacs
+              # https://docs.doomemacs.org/latest/modules/tools/debugger/
+              lldb
             ];
           };
         }

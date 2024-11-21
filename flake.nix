@@ -113,6 +113,11 @@
             description = "AWS development environment";
           };
 
+          github = {
+            path = ./flakes/github;
+            description = "Github development environment";
+          };
+
         };
       };
 }

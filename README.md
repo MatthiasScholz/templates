@@ -9,6 +9,7 @@ Supported:
 - terraform
 - tools
 - aws
+- gcp
 - github
 
 ## Tasks

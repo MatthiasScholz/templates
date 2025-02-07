@@ -88,6 +88,11 @@
             description = "Go (Golang) development environment";
           };
 
+          opa = {
+            path = ./flakes/opa;
+            description = "Open Policy agent development environment";
+          };
+
           terraform = {
             path = ./flakes/terraform;
             description = "Terraform development environment";

@@ -1,6 +1,6 @@
 # NOTE: Copy of https://github.com/the-nix-way/dev-templates/blob/main/hashi/flake.nix
 {
-  description = "A Nix-flake-based development environment for Terraform";
+  description = "A Nix-flake-based development environment for Open Policy Agent";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
@@ -22,23 +22,12 @@
         {
           default = pkgs.mkShell {
             packages = with pkgs; [
-              tfswitch
-              tf-summarize
-              # Orchestrate
-              terramate
-              # Static code analysis
-              tflint
-              # Deprecated
-              tfsec
-              # Superseeded by
-              trivy
-              # Helper
-              hcledit
-              # Custom policies
-              # TODO connect to opa flake
+              open-policy-agent
               conftest
             ];
 
+            # TODO Check
+            # https://github.com/direnv/direnv/issues/73#issuecomment-2478178424
             # NOTE Not supported by direnv!
             # https://discourse.nixos.org/t/how-to-define-alias-in-shellhook/15299
             #shellHook = ''

@@ -6,6 +6,7 @@ Leverages: direnv, nix
 Supported:
 
 - go
+- open policy agent (opa)
 - terraform
 - tools
 - aws

@@ -24,6 +24,8 @@
             packages = with pkgs; [
               open-policy-agent
               conftest
+              # linter
+              regal
             ];
 
             # TODO Check

@@ -39,6 +39,8 @@
               conftest
             ];
 
+            # TODO Check
+            # https://github.com/direnv/direnv/issues/73#issuecomment-2478178424
             # NOTE Not supported by direnv!
             # https://discourse.nixos.org/t/how-to-define-alias-in-shellhook/15299
             #shellHook = ''

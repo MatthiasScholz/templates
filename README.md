@@ -8,6 +8,7 @@ Supported:
 - go
 - open policy agent (opa)
 - terraform
+- grafana
 - tools
 - aws
 - gcp

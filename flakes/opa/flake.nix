@@ -23,6 +23,8 @@
           default = pkgs.mkShell {
             packages = with pkgs; [
               open-policy-agent
+              # NOTE conftest comes with opa included,
+              #      but might be older than latest opa version
               conftest
               # linter
               regal

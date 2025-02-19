@@ -22,6 +22,10 @@
         {
           default = pkgs.mkShell {
             packages = with pkgs; [
+              # provides: grafana (server, cli)
+              grafana
+              grafana-alloy
+              # provides: grr
               grizzly
               # provides: jsonnet, jsonnet-lint
               go-jsonnet

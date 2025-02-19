@@ -30,8 +30,10 @@
               tflint
               # Deprecated
               tfsec
-              # Superseeded by
+              # Superseeded by but hard to use
               trivy
+              # Documentation
+              terraform-docs
               # Helper
               hcledit
               # Custom policies

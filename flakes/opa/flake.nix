@@ -23,6 +23,8 @@
           default = pkgs.mkShell {
             packages = with pkgs; [
               open-policy-agent
+              # Test hcl directly with opa because of better debugging capabilities than conftest
+              hcl2json
               # NOTE conftest comes with opa included,
               #      but might be older than latest opa version
               conftest

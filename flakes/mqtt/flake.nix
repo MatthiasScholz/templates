@@ -22,7 +22,10 @@
         {
           default = pkgs.mkShell {
             packages = with pkgs; [
-              # ui
+              # TODO consider creating a meta flake because Taskfile or Makefile is used everywhere to document steps in code
+              # Taskfile support
+              go-task
+              # client, https://mqttx.app/cli
               mqttx-cli
             ];
 

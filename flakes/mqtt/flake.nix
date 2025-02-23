@@ -26,7 +26,10 @@
               # Taskfile support
               go-task
               # client, https://mqttx.app/cli
+              mqtxx
               mqttx-cli
+              mqttui
+              mqtt-explorer
             ];
 
             # TODO Check

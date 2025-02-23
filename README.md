@@ -13,6 +13,7 @@ Supported:
 - aws
 - gcp
 - github
+- mqtt
 
 ## Tasks
 

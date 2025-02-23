@@ -10,6 +10,7 @@ upgrade:
 	$(call flake-update, github)
 	$(call flake-update, go)
 	$(call flake-update, grafana)
+	$(call flake-update, mqtt)
 	$(call flake-update, opa)
 	$(call flake-update, opentofu)
 	$(call flake-update, terraform)

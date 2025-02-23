@@ -128,6 +128,12 @@
             description = "Github development environment";
           };
 
+
+          mqttf = {
+            path = ./flakes/mqtt;
+            description = "MQTT development environment";
+          };
+
         };
       };
 }

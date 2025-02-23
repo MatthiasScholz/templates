@@ -13,6 +13,7 @@ upgrade:
 	$(call flake-update, mqtt)
 	$(call flake-update, opa)
 	$(call flake-update, opentofu)
+	$(call flake-update, shell)
 	$(call flake-update, terraform)
 	$(call flake-update, terraform-provider)
 	$(call flake-update, tools)

@@ -5,15 +5,16 @@ Leverages: direnv, nix
 
 Supported:
 
-- go
-- open policy agent (opa)
-- terraform
-- grafana
-- tools
 - aws
 - gcp
 - github
+- go
+- grafana
 - mqtt
+- open policy agent (opa)
+- shell scripting
+- terraform
+- tools
 
 ## Tasks
 

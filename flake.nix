@@ -128,6 +128,10 @@
             description = "Github development environment";
           };
 
+          shell = {
+            path = ./flakes/shell;
+            description = "Shell scripting development environment";
+          };
 
           mqttf = {
             path = ./flakes/mqtt;

@@ -26,7 +26,7 @@
               # Taskfile support
               go-task
               # client, https://mqttx.app/cli
-              mqtxx
+              # unsuppord MacOSX package: mqtxx
               mqttx-cli
               mqttui
               mqtt-explorer

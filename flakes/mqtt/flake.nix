@@ -29,7 +29,9 @@
               # unsuppord MacOSX package: mqtxx
               mqttx-cli
               mqttui
-              mqtt-explorer
+              # NOTE unfree:
+              # FIXME support unfree packages
+              # mqtt-explorer
             ];
 
             # TODO Check

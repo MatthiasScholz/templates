@@ -23,6 +23,9 @@
             packages = with pkgs; [
               adrgen
               jq
+              # alternative to jq: zq
+              zed
+              fx
             ];
 
             # NOTE Not supported by direnv!

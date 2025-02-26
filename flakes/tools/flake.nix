@@ -23,8 +23,7 @@
             packages = with pkgs; [
               adrgen
               jq
-              # alternative to jq: zq
-              zed
+              # alternative to jq - visual browsing
               fx
             ];
 

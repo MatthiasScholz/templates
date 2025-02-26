@@ -26,6 +26,8 @@
               spellcheck
               # testing
               bats
+              # language server
+              bash-language-server
             ];
 
             # TODO Check

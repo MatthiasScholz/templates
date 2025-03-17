@@ -143,6 +143,11 @@
             description = "Kubernetes platform development environment";
           };
 
+          v = {
+            path = ./flakes/v;
+            description = "V development environment";
+          };
+
         };
       };
 }

@@ -16,6 +16,7 @@ Supported:
 - shell scripting
 - terraform
 - tools
+- v
 
 ## Tasks
 

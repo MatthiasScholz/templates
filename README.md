@@ -10,6 +10,7 @@ Supported:
 - github
 - go
 - grafana
+- k8s
 - mqtt
 - open policy agent (opa)
 - shell scripting

@@ -133,9 +133,14 @@
             description = "Shell scripting development environment";
           };
 
-          mqttf = {
+          mqtt = {
             path = ./flakes/mqtt;
             description = "MQTT development environment";
+          };
+
+          k8s = {
+            path = ./flakes/k8s;
+            description = "Kubernetes platform development environment";
           };
 
         };

@@ -35,7 +35,7 @@
               yq
               # Local Development using KinD
               kind
-              docker
+              # docker - FIXME on MacOS brew version of docker has to be used, why?
               colima
               # Cluster Manaagment
               k9s

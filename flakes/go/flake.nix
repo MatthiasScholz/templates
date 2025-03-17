@@ -7,7 +7,7 @@
   outputs =
     { self, nixpkgs }:
     let
-      goVersion = 23;
+      goVersion = 24;
       overlays = [ (final: prev: { go = prev."go_1_${toString goVersion}"; }) ];
       supportedSystems = [
         "x86_64-linux"

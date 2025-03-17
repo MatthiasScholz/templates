@@ -57,6 +57,13 @@
               # https://docs.doomemacs.org/latest/modules/tools/debugger/
               lldb
             ];
+
+            shellHook = ''
+              echo "============================================================="
+              echo "INFO :: Providing some hints of the capabilities of the shell"
+              go version
+              echo "============================================================="
+            '';
           };
         }
       );

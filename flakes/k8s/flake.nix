@@ -41,6 +41,8 @@
               k9s
               # Install additional tools not available in nixpkgs
               go
+              # Kratix local development
+              minio-client
             ];
 
             # TODO Check

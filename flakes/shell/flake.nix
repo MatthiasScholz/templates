@@ -23,7 +23,7 @@
           default = pkgs.mkShell {
             packages = with pkgs; [
               # linting
-              spellcheck
+              shellcheck
               # testing
               bats
               # language server

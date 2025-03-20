@@ -28,6 +28,10 @@
               bats
               # language server
               bash-language-server
+              # --- alternatives
+              # TODO check if go needs to be installed - if yes: consider moving to golang
+              # https://risor.io
+              risor
             ];
 
             # TODO Check

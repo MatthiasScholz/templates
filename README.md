@@ -17,6 +17,7 @@ Supported:
 - terraform
 - tools
 - v
+- container
 
 ## Tasks
 

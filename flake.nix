@@ -148,6 +148,11 @@
             description = "V development environment";
           };
 
+          container = {
+            path = ./flakes/container;
+            description = "Container development environment";
+          };
+
         };
       };
 }

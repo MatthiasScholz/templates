@@ -28,13 +28,19 @@
               #dockfmt
               # LSP
               dockerfile-language-server-nodejs
+              # Container testing
+              goss
+              # TODO darwin currently unsupport, but goss is available and dgoss is only a wrapper
+              # dgoss
             ];
 
             # NOTE Not supported by direnv!
             # https://discourse.nixos.org/t/how-to-define-alias-in-shellhook/15299
             shellHook = ''
               source <(docker completion bash)
-              docker-buildx install
+              # HACK manual install of dgoss
+              curl -L https://raw.githubusercontent.com/goss-org/goss/master/extras/dgoss/dgoss -o /tmp/dgoss
+              chmod +rx /tmp/dgoss
             '';
           };
         }

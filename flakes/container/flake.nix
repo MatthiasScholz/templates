@@ -24,7 +24,8 @@
               colima # NOTE requires docker (brew)
               docker-buildx
               docker-compose
-              dockfmt
+              # NOTE Dockerfile formatting removes comments, not configurable, not maintained
+              #dockfmt
               # LSP
               dockerfile-language-server-nodejs
             ];

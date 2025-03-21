@@ -34,6 +34,7 @@
             # https://discourse.nixos.org/t/how-to-define-alias-in-shellhook/15299
             shellHook = ''
               source <(docker completion bash)
+              docker-buildx install
             '';
           };
         }

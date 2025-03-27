@@ -55,6 +55,7 @@
 
               # debugging with emacs
               # https://docs.doomemacs.org/latest/modules/tools/debugger/
+              delve
               lldb
             ];
 

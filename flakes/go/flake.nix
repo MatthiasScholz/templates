@@ -60,6 +60,8 @@
             ];
 
             shellHook = ''
+              echo "HACK install delve via go - because emacs dap-mode does not recognize direnv installed delve and defaults to $HOME/go/bin"
+              go install github.com/go-delve/delve/cmd/dlv@latest
               echo "============================================================="
               echo "INFO :: Providing some hints of the capabilities of the shell"
               go version

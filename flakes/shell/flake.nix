@@ -26,21 +26,25 @@
               shellcheck
               # testing
               bats
+              # debugger, in emacs via realgud - darwin unsupported -> use brew
+              # bashdb
               # language server
               bash-language-server
               # --- alternatives
               # TODO check if go needs to be installed - if yes: consider moving to golang
               # https://risor.io
               risor
+              # If shell scripting then with style
+              gum
             ];
 
             # TODO Check
             # https://github.com/direnv/direnv/issues/73#issuecomment-2478178424
             # NOTE Not supported by direnv!
             # https://discourse.nixos.org/t/how-to-define-alias-in-shellhook/15299
-            #shellHook = ''
-            #    alias tmg="terramate generate"
-            #'';
+            shellHook = ''
+              source <(risor completion bash)
+            '';
           };
         }
       );

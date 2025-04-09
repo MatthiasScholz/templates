@@ -25,6 +25,9 @@
               jq
               # alternative to jq - visual browsing
               fx
+              # REST API interaction and testing
+              restish
+              hurl
             ];
 
             # NOTE Not supported by direnv!

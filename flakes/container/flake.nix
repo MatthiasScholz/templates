@@ -21,7 +21,7 @@
         {
           default = pkgs.mkShell {
             packages = with pkgs; [
-              colima # NOTE requires docker (brew)
+              colima
               docker-buildx
               docker-compose
               # NOTE Dockerfile formatting removes comments, not configurable, not maintained

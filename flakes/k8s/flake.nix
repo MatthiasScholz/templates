@@ -50,8 +50,10 @@
             # NOTE Not supported by direnv!
             # https://discourse.nixos.org/t/how-to-define-alias-in-shellhook/15299
             shellHook = ''
+              source <(kubectl completion bash)
               echo "Install Kratix CLI - for platform development use case on top of K8s"
               go install github.com/syntasso/kratix-cli/cmd/kratix@latest
+              source <(kratix completion bash)
             '';
           };
         }

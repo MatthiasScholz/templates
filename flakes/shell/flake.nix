@@ -7,6 +7,9 @@
   outputs =
     { self, nixpkgs }:
     let
+      # Need go compiler to install some handy tools not available in the nixpkgs
+      goVersion = 24;
+      overlays = [ (final: prev: { go = prev."go_1_${toString goVersion}"; }) ];
       supportedSystems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -14,7 +17,10 @@
         "aarch64-darwin"
       ];
       forEachSupportedSystem =
-        f: nixpkgs.lib.genAttrs supportedSystems (system: f { pkgs = import nixpkgs { inherit system; }; });
+        f:
+        nixpkgs.lib.genAttrs supportedSystems (
+          system: f { pkgs = import nixpkgs { inherit overlays system; }; }
+        );
     in
     {
       devShells = forEachSupportedSystem (
@@ -36,6 +42,9 @@
               risor
               # If shell scripting then with style
               gum
+              # Prerequisite to install RSX
+              # SEE: https://rubiojr.github.io/rsx/
+              go
             ];
 
             # TODO Check
@@ -44,6 +53,8 @@
             # https://discourse.nixos.org/t/how-to-define-alias-in-shellhook/15299
             shellHook = ''
               source <(risor completion bash)
+              echo "Setup risor script bundler with external library support: RSX"
+              CGO_ENABLED=1 go install --tags fts5,semver github.com/rubiojr/rsx@latest
             '';
           };
         }

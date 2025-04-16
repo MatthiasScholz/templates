@@ -39,6 +39,7 @@
               # --- alternatives
               # TODO check if go needs to be installed - if yes: consider moving to golang
               # https://risor.io
+              # FIXME does not contain k8s
               risor
               # If shell scripting then with style
               gum

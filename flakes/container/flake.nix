@@ -31,7 +31,8 @@
               # Container testing
               goss
               # TODO darwin currently unsupport, but goss is available and dgoss is only a wrapper
-              # dgoss
+              # TODO extend nixpkgs platforms to mac: https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/dg/dgoss/package.nix#L42
+              # dgossn
             ];
 
             # NOTE Not supported by direnv!

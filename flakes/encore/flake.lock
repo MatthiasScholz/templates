@@ -5,15 +5,14 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-K6y3nrc/ENrGm10vrnaa8nMliNrAqbaegOI812yHcDE=",
         "path": "./package",
         "type": "path"
       },
       "original": {
         "path": "./package",
         "type": "path"
-      }
+      },
+      "parent": []
     },
     "nixpkgs": {
       "locked": {
@@ -32,11 +31,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1744096231,
-        "narHash": "sha256-kUfx3FKU1Etnua3EaKvpeuXs7zoFiAcli1gBwkPvGSs=",
+        "lastModified": 1744536153,
+        "narHash": "sha256-awS2zRgF4uTwrOKwwiJcByDzDOdo3Q1rPZbiHQg/N38=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b2b0718004cc9a5bca610326de0a82e6ea75920b",
+        "rev": "18dd725c29603f582cf1900e0d25f9f1063dbf11",
         "type": "github"
       },
       "original": {

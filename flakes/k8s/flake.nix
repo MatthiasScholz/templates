@@ -32,7 +32,7 @@
               # THE CLI
               kubectl
               # Simplify YAML handling
-              yq
+              yq-go
               # Local Development using KinD
               kind
               # docker - FIXME on MacOS brew version of docker has to be used, why?

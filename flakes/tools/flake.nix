@@ -28,6 +28,10 @@
               # REST API interaction and testing
               restish
               hurl
+              # git repositories management
+              mani
+              # Makefile alternative
+              go-task
             ];
 
             # NOTE Not supported by direnv!

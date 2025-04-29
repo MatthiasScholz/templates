@@ -55,12 +55,12 @@
             # https://discourse.nixos.org/t/how-to-define-alias-in-shellhook/15299
             shellHook = ''
               echo "INFO :: Build risor with all available modules"
-              TMPDIR=$(mktemp -d)
-              echo ".build folder: $TMPDIR"
-              git clone https://github.com/risor-io/risor.git $TMPDIR
-              cd $TMPDIR
+              TMPDIR_RISOR=$(mktemp -d)
+              echo ".build folder: $TMPDIR_RISOR"
+              git clone https://github.com/risor-io/risor.git $TMPDIR_RISOR
+              cd $TMPDIR_RISOR
               go install -tags=aws,carbon,cli,jmespath,k8s,pgx,semver,s3fs,template,uuid .
-              rm -rf $TMPDIR
+              rm -rf $TMPDIR_RISOR
 
               echo "INFO :: Configure autocompletion for Bash"
               source <(risor completion bash)

@@ -30,6 +30,7 @@
             packages = with pkgs; [
               # linting
               shellcheck
+              shfmt
               # testing
               bats
               # debugger, in emacs via realgud - darwin unsupported -> use brew

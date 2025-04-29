@@ -43,6 +43,8 @@
               go
               # Kratix local development
               minio-client
+              # Required to run the Kratix CLI test suite
+              kubernetes-helm
             ];
 
             # TODO Check

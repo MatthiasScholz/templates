@@ -27,6 +27,10 @@
               aws-nuke
               # NOTE unsupported package: gossm https://github.com/gjbae1212/gossm
               # NOTE unsupproted package: sm https://github.com/clok/sm
+              # build ami
+              packer
+              ansible
+              ssm-session-manager-plugin
             ];
 
             # NOTE Not supported by direnv!

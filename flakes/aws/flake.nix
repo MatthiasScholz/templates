@@ -28,7 +28,8 @@
               # NOTE unsupported package: gossm https://github.com/gjbae1212/gossm
               # NOTE unsupproted package: sm https://github.com/clok/sm
               # build ami
-              packer
+              # FIXME requires unfree package support:
+              # packer
               ansible
               ssm-session-manager-plugin
             ];

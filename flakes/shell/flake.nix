@@ -40,8 +40,8 @@
               # --- alternatives
               # TODO check if go needs to be installed - if yes: consider moving to golang
               # https://risor.io
-              # FIXME does not contain k8s
-              risor
+              # FIXME does not contain aws, k8s
+              # risor
               # If shell scripting then with style
               gum
               # Prerequisite to install RSX
@@ -54,8 +54,15 @@
             # NOTE Not supported by direnv!
             # https://discourse.nixos.org/t/how-to-define-alias-in-shellhook/15299
             shellHook = ''
+              echo "INFO :: Build risor with all available modules"
+              git clone https://github.com/risor-io/risor.git /tmp/risor
+              cd /tmp/risor/cmd/risor
+              go install -tags=aws,carbon,cli,jmespath,k8s,pgx,semver,s3fs,template,uuid .
+
+              echo "INFO :: Configure autocompletion for Bash"
               source <(risor completion bash)
-              echo "Setup risor script bundler with external library support: RSX"
+
+              echo "INFO Setup risor script bundler with external library support: RSX"
               CGO_ENABLED=1 go install --tags fts5,semver github.com/rubiojr/rsx@latest
             '';
           };

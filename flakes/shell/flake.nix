@@ -67,8 +67,8 @@
               echo "INFO Setup risor script bundler with external library support: RSX"
               CGO_ENABLED=1 go install --tags fts5,semver github.com/rubiojr/rsx@latest
 
-              echo "INFO :: cleanup temporary folder"
-              rm -rf $TMPDIR_RISOR
+              #echo "INFO :: cleanup temporary folder"
+              #rm -rf $TMPDIR_RISOR
             '';
           };
         }

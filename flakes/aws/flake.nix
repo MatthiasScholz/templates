@@ -30,7 +30,8 @@
               # build ami
               # FIXME requires unfree package support:
               # packer
-              ansible
+              # FIXME package seems to be broken
+              # ansible
               ssm-session-manager-plugin
             ];
 

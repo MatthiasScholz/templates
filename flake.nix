@@ -153,6 +153,11 @@
             description = "Container development environment";
           };
 
+          dotnet = {
+            path = ./flakes/dotnet;
+            description = "Dotnet runtime environment";
+          };
+
         };
       };
 }

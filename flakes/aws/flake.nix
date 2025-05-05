@@ -35,11 +35,9 @@
               ssm-session-manager-plugin
             ];
 
-            # NOTE Not supported by direnv!
-            # https://discourse.nixos.org/t/how-to-define-alias-in-shellhook/15299
-            #shellHook = ''
-            #    alias tmg="terramate generate"
-            #'';
+            shellHook = ''
+              function identity() { aws sts get-caller-identity }
+            '';
           };
         }
       );

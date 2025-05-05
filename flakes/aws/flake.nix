@@ -36,7 +36,7 @@
             ];
 
             shellHook = ''
-              function identity() { aws sts get-caller-identity }
+              # function identity() { aws sts get-caller-identity }
             '';
           };
         }

@@ -50,12 +50,12 @@
             #'';
             shellHook = ''
               # Terraform shortcuts
-              function tf () { terraform "$@" }
-              function tfp () { terraform plan -out=infra.plan; tf-summarize -tree infra.plan }
+              # function tf() { terraform "$@" }
+              # function tfp() { terraform plan -out=infra.plan && tf-summarize -tree infra.plan }
               # Terramate shortcuts
-              function tm () { terramate "$@" }
-              function tmg () { terramate generate "$@" }
-              function tms () { terramate script run "$@" }
+              # function tm() { terramate "$@" }
+              # function tmg() { terramate generate "$@" }
+              # function tms() { terramate script run "$@" }
             '';
           };
         }

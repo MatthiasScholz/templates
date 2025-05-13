@@ -6,6 +6,7 @@ Leverages: direnv, nix
 Supported:
 
 - aws
+- container
 - gcp
 - github
 - go
@@ -13,11 +14,11 @@ Supported:
 - k8s
 - mqtt
 - open policy agent (opa)
+- python
 - shell scripting
 - terraform
 - tools
 - v
-- container
 
 ## Tasks
 

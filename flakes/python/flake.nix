@@ -23,6 +23,8 @@
           default = pkgs.mkShell {
             packages = with pkgs; [
               uv
+              # templating
+              jinja2-cli
             ];
 
             # TODO Check

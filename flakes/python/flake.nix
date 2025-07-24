@@ -22,9 +22,21 @@
         {
           default = pkgs.mkShell {
             packages = with pkgs; [
+              python313Full
+              # linting
+              python313Packages.pyflakes
+              # testing
+              python313Packages.pytest
+              # lsp, type checker
+              python313Packages.python-lsp-server
+              pyright
+              # package manager
               uv
               # templating
               jinja2-cli
+              # formatting
+              black
+              isort
             ];
 
             # TODO Check

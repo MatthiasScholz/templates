@@ -43,7 +43,7 @@
   # Module introduction
   enterShell = ''
     echo INFO :: container environment setup
-    colima --version"
+    colima --version
   '';
 
   # https://devenv.sh/tests/

@@ -1,6 +1,7 @@
 define flake-update
 	$(eval flake=$(1))
 	cd flakes/$(flake) && nix flake update
+	cd flakes/$(flake) && devenv update || echo "Skipping $(flake)"
 endef
 
 upgrade:

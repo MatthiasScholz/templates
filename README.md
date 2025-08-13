@@ -27,13 +27,13 @@ Supported:
 
 ## direnv with nix flakes
 
-``` sh
+```sh
 # Use flake directly - composable
 echo "use flake \"github:matthiasscholz/templates?dir=flakes/go\"" >> .envrc
 direnv allow
 ```
 
-``` sh
+```sh
 # Use flake as a starting point - tailor
 nix flake init -t "github:matthiasscholz/templates#go"
 direnv allow
@@ -49,7 +49,7 @@ Using Nix Home Manager to install `nix-direnv`
 1. Develop and test template as described below.
 1. Register template in `./flake.nix`.
 
-``` sh
+```sh
 # With direnv
 cd flakes/go
 

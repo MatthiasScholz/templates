@@ -33,11 +33,11 @@
   # Build risor with all available modules"
   tasks."risor:full" = {
     exec = ''
-         TMPDIR_RISOR=$(mktemp -d --tmpdir=/tmp)
-         echo ".build folder: $TMPDIR_RISOR"
-         git clone https://github.com/risor-io/risor.git $TMPDIR_RISOR
-         cd $TMPDIR_RISOR
-         go install -tags=aws,carbon,cli,jmespath,k8s,pgx,semver,s3fs,template,uuid .
+      TMPDIR_RISOR=$(mktemp -d --tmpdir=/tmp)
+      echo ".build folder: $TMPDIR_RISOR"
+      git clone https://github.com/risor-io/risor.git $TMPDIR_RISOR
+      cd $TMPDIR_RISOR
+      go install -tags=aws,carbon,cli,jmespath,k8s,pgx,semver,s3fs,template,uuid .
     '';
   };
   # Setup risor script bundler with external library support: RSX"

@@ -9,19 +9,19 @@
 {
   # https://devenv.sh/packages/
   packages = [
-   pkgs.kubectl
-   pkgs.kubernetes-helm
-   # Simplify YAML handling
-   pkgs.yq-go
-   # Local Development using KinD
-   pkgs.kind
-   # .Kratix local development
-   #pkgs.minio-client
-   # .docker - FIXME on MacOS brew version of docker has to be used, why?
-   pkgs.colima
-   # Tooling
-   # .Cluster Management
-   pkgs.k9s
+    pkgs.kubectl
+    pkgs.kubernetes-helm
+    # Simplify YAML handling
+    pkgs.yq-go
+    # Local Development using KinD
+    pkgs.kind
+    # .Kratix local development
+    #pkgs.minio-client
+    # .docker - FIXME on MacOS brew version of docker has to be used, why?
+    pkgs.colima
+    # Tooling
+    # .Cluster Management
+    pkgs.k9s
   ];
 
   # HACK Install additional tools not available in nixpkgs

@@ -30,8 +30,8 @@
   # HACK manually install of dgoss
   tasks."install:dgoss" = {
     exec = ''
-         curl -L https://raw.githubusercontent.com/goss-org/goss/master/extras/dgoss/dgoss -o /tmp/dgoss
-         chmod +rx /tmp/dgoss
+      curl -L https://raw.githubusercontent.com/goss-org/goss/master/extras/dgoss/dgoss -o /tmp/dgoss
+      chmod +rx /tmp/dgoss
     '';
   };
 

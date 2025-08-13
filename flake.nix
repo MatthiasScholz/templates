@@ -157,7 +157,7 @@
             path = ./flakes/dotnet;
             description = "Dotnet runtime environment";
           };
-          
+
           python = {
             path = ./flakes/python;
             description = "Python development environment";

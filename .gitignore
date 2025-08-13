@@ -2,3 +2,7 @@
 .direnv/
 target
 result
+# for now do no use locks for version flexibility, lock files can be managed by the module users
+.devenv.flake.nix
+devenv.lock
+.devenv/

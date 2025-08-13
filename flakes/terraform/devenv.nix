@@ -7,50 +7,63 @@
 }:
 
 {
-  # https://devenv.sh/basics/
-  env.GREET = "terraform";
-
   # https://devenv.sh/packages/
+  # TODO find a way to incorporate the package definition and more of the flake.nix
   packages = [
-    pkgs.git
+    # Version management
+    pkgs.tfswitch
+    # Orchestration
     pkgs.terramate
+    # Analytics
+    pkgs.tf-summarize
+    # Static Code Analysis
+    pkgs.tflint
+    pkgs.tfsec
+    pkgs.trivy
+    # Testing
+    pkgs.conftest
+    # Documentation
+    pkgs.terraform-docs
+    # Helper
+    pkgs.hcledit
   ];
 
-  # https://devenv.sh/languages/
-  # languages.rust.enable = true;
-
-  # https://devenv.sh/processes/
-  # processes.cargo-watch.exec = "cargo-watch";
-
-  # https://devenv.sh/services/
-  # services.postgres.enable = true;
-
   # https://devenv.sh/scripts/
-  scripts.hello.exec = ''
-    echo hello from $GREET environment setup
+  scripts.welcome.exec = ''
+    echo INFO :: terraform environment setup
   '';
 
+  # Aliases
+  # .terraform
+  scripts.tf.exec = ''
+    terraform "$@"
+  '';
+  scripts.tfp.exec = ''
+    tf plan -out=infra.tfplan && tf-summarize -tree infra.tfplan
+  '';
+  # .terramate
+  scripts.tm.exec = ''
+    terramate "$@"
+  '';
+  scripts.tmg.exec = ''
+    tm generate "$@"
+  '';
+  scripts.tmp.exec = ''
+    tm run -- tmp
+  '';
+  scripts.tms.exec = ''
+    tm script run "$@"
+  '';
+
+  # Module introduction
   enterShell = ''
-    hello
-    git --version
+    welcome
     echo "terramate version $(terramate --version)"
   '';
-
-  # https://devenv.sh/tasks/
-  # tasks = {
-  #   "myproj:setup".exec = "mytool build";
-  #   "devenv:enterShell".after = [ "myproj:setup" ];
-  # };
 
   # https://devenv.sh/tests/
   enterTest = ''
     echo "Running tests"
-    git --version | grep --color=auto "${pkgs.git.version}"
     terramate --version | grep --color=auto "${pkgs.terramate.version}"
   '';
-
-  # https://devenv.sh/git-hooks/
-  # git-hooks.hooks.shellcheck.enable = true;
-
-  # See full reference at https://devenv.sh/reference/options/
 }

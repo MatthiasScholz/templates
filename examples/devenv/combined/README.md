@@ -10,6 +10,7 @@ This example demonstrates the use case for the modules:
 - [go](/flakes/go)
 - [k8s](/flakes/k8s)
 - [shell](/flakes/shell)
+- [tools](/flakes/tools)
 
 Supported modules have to have a `devenv.nix`
 configuration file. The `flake.nix` is not used.

@@ -16,3 +16,4 @@ imports:
   - devenv-modules/flakes/go
   - devenv-modules/flakes/k8s
   - devenv-modules/flakes/shell
+  - devenv-modules/flakes/tools

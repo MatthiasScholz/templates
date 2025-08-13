@@ -17,3 +17,4 @@ imports:
   - devenv-modules/flakes/k8s
   - devenv-modules/flakes/shell
   - devenv-modules/flakes/tools
+  - devenv-modules/flakes/container

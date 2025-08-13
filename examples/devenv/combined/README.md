@@ -11,6 +11,7 @@ This example demonstrates the use case for the modules:
 - [k8s](/flakes/k8s)
 - [shell](/flakes/shell)
 - [tools](/flakes/tools)
+- [container](/flakes/container)
 
 Supported modules have to have a `devenv.nix`
 configuration file. The `flake.nix` is not used.

@@ -18,3 +18,4 @@ imports:
   - devenv-modules/flakes/shell
   - devenv-modules/flakes/tools
   - devenv-modules/flakes/container
+  - devenv-modules/flakes/python

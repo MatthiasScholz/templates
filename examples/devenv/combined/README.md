@@ -12,6 +12,7 @@ This example demonstrates the use case for the modules:
 - [shell](/flakes/shell)
 - [tools](/flakes/tools)
 - [container](/flakes/container)
+- [python](/flakes/python)
 
 Supported modules have to have a `devenv.nix`
 configuration file. The `flake.nix` is not used.

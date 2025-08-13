@@ -6,6 +6,7 @@ to one holistic development environment setup.
 
 This example demonstrates the use case for the modules:
 
+- [aws](/flakes/aws)
 - [terraform](/flakes/terraform)
 - [go](/flakes/go)
 - [k8s](/flakes/k8s)

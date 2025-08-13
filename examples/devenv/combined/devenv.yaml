@@ -12,6 +12,7 @@ allowUnfree: true
 
 # NOTE: IMPORTANT merge the devenvs
 imports:
+  - devenv-modules/flakes/aws
   - devenv-modules/flakes/terraform
   - devenv-modules/flakes/go
   - devenv-modules/flakes/k8s

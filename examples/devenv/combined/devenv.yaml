@@ -14,3 +14,4 @@ allowUnfree: true
 imports:
   - devenv-modules/flakes/terraform
   - devenv-modules/flakes/go
+  - devenv-modules/flakes/k8s

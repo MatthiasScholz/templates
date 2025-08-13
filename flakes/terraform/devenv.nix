@@ -28,11 +28,6 @@
     pkgs.hcledit
   ];
 
-  # https://devenv.sh/scripts/
-  scripts.welcome.exec = ''
-    echo INFO :: terraform environment setup
-  '';
-
   # Aliases
   # .terraform
   scripts.tf.exec = ''
@@ -57,7 +52,7 @@
 
   # Module introduction
   enterShell = ''
-    welcome
+    echo INFO :: terraform environment setup
     echo "terramate version $(terramate --version)"
   '';
 

@@ -19,3 +19,4 @@ imports:
   - devenv-modules/flakes/tools
   - devenv-modules/flakes/container
   - devenv-modules/flakes/python
+  - devenv-modules/flakes/dotnet

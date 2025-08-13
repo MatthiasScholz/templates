@@ -4,8 +4,13 @@ Showing the use of a **devenv** configurations in this
 repository to combine the different configurations
 to one holistic development environment setup.
 
-This example demonstrates the use case for the
-[terraform](/flakes/terraform) module.
+This example demonstrates the use case for the modules:
+
+- [terraform](/flakes/terraform)
+- [go](/flakes/go)
+
+Supported modules have to have a `devenv.nix`
+configuration file. The `flake.nix` is not used.
 
 ## Use Case
 

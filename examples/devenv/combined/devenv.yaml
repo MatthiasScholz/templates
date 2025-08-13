@@ -4,6 +4,8 @@ inputs:
     url: github:cachix/devenv-nixpkgs/rolling
   devenv-modules:
     url: github:matthiasscholz/templates
+    # Local testing
+    # url: path:/Users/matthias/projects/config/templates/
 
 # If you're using non-OSS software, you can set allowUnfree to true.
 allowUnfree: true
@@ -11,3 +13,4 @@ allowUnfree: true
 # NOTE: IMPORTANT merge the devenvs
 imports:
   - devenv-modules/flakes/terraform
+  - devenv-modules/flakes/go

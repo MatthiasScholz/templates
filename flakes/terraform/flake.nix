@@ -28,6 +28,7 @@
               terramate
               # Static code analysis
               tflint
+              terrascan
               # Deprecated
               tfsec
               # Superseeded by but hard to use

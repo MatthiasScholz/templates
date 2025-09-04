@@ -19,6 +19,7 @@
     # Static Code Analysis
     pkgs.tflint
     pkgs.tfsec
+    pkgs.terrascan
     pkgs.trivy
     # Testing
     pkgs.conftest

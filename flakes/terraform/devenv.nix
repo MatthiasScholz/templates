@@ -16,6 +16,8 @@
     pkgs.terramate
     # Analytics
     pkgs.tf-summarize
+    # LSP
+    pkgs.terraform-ls
     # Static Code Analysis
     pkgs.tflint
     pkgs.tfsec

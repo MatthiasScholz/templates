@@ -24,6 +24,8 @@
             packages = with pkgs; [
               tfswitch
               tf-summarize
+              # LSP
+              terraform-ls
               # Orchestrate
               terramate
               # Static code analysis

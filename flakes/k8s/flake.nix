@@ -37,8 +37,9 @@
               kind
               # docker - FIXME on MacOS brew version of docker has to be used, why?
               colima
-              # Cluster Manaagment
+              # Cluster Management
               k9s
+              lens
               # Install additional tools not available in nixpkgs
               go
               # Kratix local development

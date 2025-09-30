@@ -79,7 +79,7 @@
 
     //
 
-      # NOTE Register new templates here
+      # NOTE Register new flake based templates here
       {
         templates = rec {
 

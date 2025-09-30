@@ -13,7 +13,7 @@
   # https://devenv.sh/packages/
   packages = [
     # Language
-    pkgs.python313Full
+    pkgs.python313
     # Package Managerment
     pkgs.uv
     # Static Code Analysis

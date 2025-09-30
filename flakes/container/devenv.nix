@@ -14,7 +14,7 @@
     pkgs.docker-buildx
     pkgs.docker-compose
     # Development Support
-    pkgs.dockerfile-language-server-nodejs
+    pkgs.dockerfile-language-server
     # Testing
     pkgs.goss
     # TODO darwin currently unsupport, but goss is available and dgoss is only a wrapper

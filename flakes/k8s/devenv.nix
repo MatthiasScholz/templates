@@ -22,6 +22,7 @@
     # Tooling
     # .Cluster Management
     pkgs.k9s
+    pkgs.lens
   ];
 
   # HACK Install additional tools not available in nixpkgs

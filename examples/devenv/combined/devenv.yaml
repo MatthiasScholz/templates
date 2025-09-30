@@ -21,3 +21,4 @@ imports:
   - devenv-modules/flakes/container
   - devenv-modules/flakes/python
   - devenv-modules/flakes/dotnet
+  - devenv-modules/flakes/lua

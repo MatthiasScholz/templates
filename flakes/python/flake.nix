@@ -37,6 +37,8 @@
               # formatting
               black
               isort
+              # Jupyther Notebook in VSCode with Google Colab
+              python313Packages.ipykernel
             ];
 
             # TODO Check

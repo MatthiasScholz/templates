@@ -7,17 +7,32 @@
 }:
 
 {
+  # Make the port configurable on a use basis
+  # NOTE: everyone should us a different port to avoid collision when running multiple opencode instances
+  # Try to get ports from your shell; if empty string, use default
+  env.OPENCODE_PORT =
+    let
+      hostPort = builtins.getEnv "OPENCODE_PORT";
+    in
+    if hostPort != "" then hostPort else "53053";
+  env.OPENCODE_DASHBOARD_PORT =
+    let
+      hostPort = builtins.getEnv "OPENCODE_DASHBOARD_PORT";
+    in
+    if hostPort != "" then hostPort else "51234";
+
   # https://devenv.sh/packages/
   packages = [ pkgs.bun ];
 
   # https://devenv.sh/processes/
   processes.opencode-web.exec = ''
-    opencode web --port 53053
+    opencode web --port $OPENCODE_PORT
   '';
   scripts.opencode-attach.exec = ''
-    opencode attach http://localhost:53053
+    opencode attach http://localhost:$OPENCODE_PORT
   '';
 
+  # TODO Configure the port or understand how multiple opencode instances are handled
   processes.opencode-dashboard.exec = ''
     bunx oh-my-opencode-dashboard@latest
   '';
@@ -28,17 +43,19 @@
   '';
 
   scripts.opencode-web-open.exec = ''
-    open http://localhost:53053
+    open http://localhost:$OPENCODE_PORT
   '';
 
   scripts.opencode-dashboard-open.exec = ''
-    open http://localhost:51234
+    open http://localhost:$OPENCODE_DASHBOARD_PORT
   '';
 
   # https://devenv.sh/basics/
   enterShell = ''
     echo INFO :: opencode environment setup
     echo "opencode version $(opencode --version)"
+    echo opencode port: $OPENCODE_PORT
+    echo opencode dashboard port: $OPENCODE_DASHBOARD_PORT
   '';
 
   # https://devenv.sh/tests/

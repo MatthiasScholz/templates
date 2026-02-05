@@ -7,19 +7,10 @@
 }:
 
 {
-  # Make the port configurable on a use basis
+  # Make the port configurable on a use basis, but provide a default
   # NOTE: everyone should us a different port to avoid collision when running multiple opencode instances
   # Try to get ports from your shell; if empty string, use default
-  env.OPENCODE_PORT =
-    let
-      hostPort = builtins.getEnv "OPENCODE_PORT";
-    in
-    if hostPort != "" then hostPort else "53053";
-  env.OPENCODE_DASHBOARD_PORT =
-    let
-      hostPort = builtins.getEnv "OPENCODE_DASHBOARD_PORT";
-    in
-    if hostPort != "" then hostPort else "51234";
+  # env.OPENCODE_PORT = "53053";
 
   # https://devenv.sh/packages/
   packages = [ pkgs.bun ];

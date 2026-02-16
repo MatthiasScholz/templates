@@ -13,7 +13,11 @@
   # env.OPENCODE_PORT = "53053";
 
   # https://devenv.sh/packages/
-  packages = [ pkgs.bun ];
+  packages = [
+    pkgs.bun
+    # npx
+    pkgs.nodejs_22
+  ];
 
   # https://devenv.sh/processes/
   processes.opencode-web.exec = ''
@@ -39,6 +43,24 @@
 
   scripts.opencode-dashboard-open.exec = ''
     open http://localhost:$OPENCODE_DASHBOARD_PORT
+  '';
+
+  # Skills
+  # SEE: https://skills.sh
+  scripts.skill-list.exec = ''
+    npx skills list
+  '';
+  scripts.skill-search.exec = ''
+    npx skills find $@
+  '';
+  scripts.skill-install.exec = ''
+    $@ --agent opencode
+  '';
+  scripts.skill-update-check.exec = ''
+    npx skills check
+  '';
+  scripts.skill-update.exec = ''
+    npx skills update
   '';
 
   # https://devenv.sh/basics/

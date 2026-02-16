@@ -23,6 +23,8 @@
     # REST API interaction and testing
     pkgs.restish
     pkgs.hurl
+    # Secret Management
+    pkgs.secretspec
   ];
 
   # Module introduction

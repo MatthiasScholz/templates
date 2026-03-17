@@ -7,12 +7,12 @@
 }:
 
 {
-  # Make the port configurable on a use basis, but provide a default
+  # FIXME Make the port configurable on a use basis, but provide a default
   # NOTE: everyone should us a different port to avoid collision when running multiple opencode instances
   # Try to get ports from your shell; if empty string, use default
   env.OPENCODE_PORT = "53053";
-  env.OPENCODE_PROFILE = "default";
-  env.OPENCODE_CONFIG_DIR = "~/.config/opencode/profiles/$OPENCODE_PROFILE`";
+  #env.OPENCODE_PROFILE = "default";
+  env.OPENCODE_CONFIG_DIR = "~/.config/opencode/profiles/$OPENCODE_PROFILE";
 
   # https://devenv.sh/packages/
   packages = [

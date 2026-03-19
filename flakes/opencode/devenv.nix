@@ -22,9 +22,11 @@
   ];
 
   # https://devenv.sh/processes/
+  # NOTE expect the client of this template to configure CORS information like:
+  # --cors app://obsidian.md
   processes.opencode-web = {
     exec = ''
-      opencode web --port $OPENCODE_PORT
+      opencode web --port $OPENCODE_PORT $OPENCODE_CORS
     '';
   };
   scripts.opencode-attach.exec = ''

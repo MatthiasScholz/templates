@@ -75,6 +75,10 @@
     echo "opencode version $(opencode --version)"
     echo opencode port: $OPENCODE_PORT
     echo opencode dashboard port: $OPENCODE_DASHBOARD_PORT
+    echo INFO :: Usage:
+    echo .start server:    devenv up --detach
+    echo .connect cli:     opencode-attach
+    echo .connect browser: opencode-web-open
   '';
 
   # https://devenv.sh/tests/

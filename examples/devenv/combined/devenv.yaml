@@ -24,3 +24,4 @@ imports:
   - devenv-modules/flakes/lua
   - devenv-modules/flakes/js
   - devenv-modules/flakes/opencode
+  - devenv-modules/flakes/opa

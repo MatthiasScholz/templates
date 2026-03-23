@@ -24,9 +24,12 @@
   # https://devenv.sh/processes/
   # NOTE expect the client of this template to configure CORS information like:
   # --cors app://obsidian.md
+  # NOTE using mdns automatically sets the hostname to 0.0.0.0
+  #      to make the service discoverable in the lokal network.
+  # NOTE client should set OPENCODE_SERVER_PASSWORD
   processes.opencode-web = {
     exec = ''
-      opencode web --port $OPENCODE_PORT $OPENCODE_CORS
+      opencode web --mdns --port $OPENCODE_PORT $OPENCODE_CORS
     '';
   };
   scripts.opencode-attach.exec = ''
@@ -79,6 +82,7 @@
     echo .start server:    devenv up --detach
     echo .connect cli:     opencode-attach
     echo .connect browser: opencode-web-open
+    echo WARNING :: Security: before starting set a server password via `export OPENCODE_SERVER_PASSWORD=changeme` (FIXME currently the only way for the process)
   '';
 
   # https://devenv.sh/tests/

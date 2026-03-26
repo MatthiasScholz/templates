@@ -82,7 +82,7 @@
     echo .start server:    devenv up --detach
     echo .connect cli:     opencode-attach
     echo .connect browser: opencode-web-open
-    echo WARNING :: Security: before starting set a server password via `export OPENCODE_SERVER_PASSWORD=changeme` (FIXME currently the only way for the process)
+    echo "WARNING :: Security: before starting set a server password via `export OPENCODE_SERVER_PASSWORD=changeme` (FIXME currently the only way for the process)"
   '';
 
   # https://devenv.sh/tests/

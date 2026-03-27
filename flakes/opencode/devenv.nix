@@ -10,9 +10,9 @@
   # FIXME Make the port configurable on a use basis, but provide a default
   # NOTE: everyone should us a different port to avoid collision when running multiple opencode instances
   # Try to get ports from your shell; if empty string, use default
-  env.OPENCODE_PORT = "53053";
-  #env.OPENCODE_PROFILE = "default";
-  env.OPENCODE_CONFIG_DIR = "~/.config/opencode/profiles/$OPENCODE_PROFILE";
+  # env.OPENCODE_PORT = "53053";
+  # env.OPENCODE_PROFILE = "default";
+  # env.OPENCODE_CONFIG_DIR = "~/.config/opencode/profiles/$OPENCODE_PROFILE";
 
   # https://devenv.sh/packages/
   packages = [
@@ -76,8 +76,12 @@
   enterShell = ''
     echo INFO :: opencode environment setup
     echo "opencode version $(opencode --version)"
-    echo opencode port: $OPENCODE_PORT
-    echo opencode dashboard port: $OPENCODE_DASHBOARD_PORT
+    echo NOTE to configure opencode you can set:
+    echo export OPENCODE_CONFIG_DIR="~/.config/opencode/profiles/default";
+    echo export OPENCODE_PORT=53053
+    echo export OPENCODE_DASHBOARD_PORT=53050
+    echo export OPENCODE_SERVER_PASSWORD=changeme
+    echo export OPENCODE_CORS="--cors app://obsidian.md"
     echo INFO :: Usage:
     echo .start server:    devenv up --detach
     echo .connect cli:     opencode-attach

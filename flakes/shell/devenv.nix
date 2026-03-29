@@ -8,12 +8,42 @@
 }:
 
 {
+  overlays = [
+    (final: prev: {
+      risor = prev.risor.overrideAttrs (oldAttrs: {
+        buildFlags = [ "-tags=aws,carbon,cli,jmespath,k8s,pgx,semver,s3fs,template,uuid" ];
+        vendorHash = "sha256-yVvryqPB35Jc3MXIJyRlFhAHU8H8PmSs60EO/JABHDs=";
+      });
+      rsx = prev.buildGoModule {
+        pname = "rsx";
+        version = "unstable-2026-03-29";
+        src = prev.fetchFromGitHub {
+          owner = "rubiojr";
+          repo = "rsx";
+          rev = "73352872ce15fed16691beb1086130af2a96282f";
+          hash = "sha256-FF8IiYWAEH5fXkfv66Zsw3A8cSvVGFV5i+vioUlbrt8=";
+        };
+        vendorHash = "sha256-ashPcaBOy8bJ0n9NUQCWTeOD5Q3a/FqIh60516csqjY=";
+        tags = [
+          "fts5"
+          "semver"
+        ];
+        env.CGO_ENABLED = "1";
+        buildInputs = [
+          prev.sqlite
+        ]
+        ++ prev.lib.optionals prev.stdenv.isDarwin [ prev.apple-sdk_14 ];
+      };
+    })
+  ];
+
   languages.shell.enable = true;
 
   # https://devenv.sh/packages/
   packages = [
     # Scripting Languages
     pkgs.risor
+    pkgs.rsx
     # Static Code Analysis
     pkgs.shellcheck
     pkgs.shfmt
@@ -23,28 +53,7 @@
     pkgs.bash-language-server
     # Helper libraries and tools
     pkgs.gum
-    # HACK for custom risor build
-    pkgs.git
   ];
-
-  # HACK recompile risor to enable additional modules
-  #      currently nixpkgs does not offer a full version
-  languages.go.enable = true;
-  # Build risor with all available modules"
-  tasks."risor:full" = {
-    exec = ''
-      TMPDIR_RISOR=$(mktemp -d --tmpdir=/tmp)
-      echo ".build folder: $TMPDIR_RISOR"
-      git clone https://github.com/risor-io/risor.git $TMPDIR_RISOR
-      cd $TMPDIR_RISOR
-      go install -tags=aws,carbon,cli,jmespath,k8s,pgx,semver,s3fs,template,uuid .
-      cp risor ~/bin/
-    '';
-  };
-  # Setup risor script bundler with external library support: RSX"
-  tasks."risor:rsx" = {
-    exec = "CGO_ENABLED=1 go install --tags fts5,semver github.com/rubiojr/rsx@latest";
-  };
 
   # Completion
   # FIXME compdef: command not found
@@ -62,5 +71,7 @@
   enterTest = ''
     echo "Running tests"
     risor version | grep --color=auto "${pkgs.risor.version}"
+    risor -c 'import aws; print("aws ok")'
+    rsx version
   '';
 }

@@ -9,7 +9,32 @@
     let
       # Need go compiler to install some handy tools not available in the nixpkgs
       goVersion = 24;
-      overlays = [ (final: prev: { go = prev."go_1_${toString goVersion}"; }) ];
+      overlays = [
+        (final: prev: {
+          go = prev."go_1_${toString goVersion}";
+          risor = prev.risor.overrideAttrs (oldAttrs: {
+            buildFlags = [ "-tags=aws,carbon,cli,jmespath,k8s,pgx,semver,s3fs,template,uuid" ];
+            vendorHash = "sha256-yVvryqPB35Jc3MXIJyRlFhAHU8H8PmSs60EO/JABHDs=";
+          });
+          rsx = prev.buildGoModule {
+            pname = "rsx";
+            version = "unstable-2026-03-29";
+            src = prev.fetchFromGitHub {
+              owner = "rubiojr";
+              repo = "rsx";
+              rev = "73352872ce15fed16691beb1086130af2a96282f";
+              hash = "sha256-FF8IiYWAEH5fXkfv66Zsw3A8cSvVGFV5i+vioUlbrt8=";
+            };
+            vendorHash = "sha256-ashPcaBOy8bJ0n9NUQCWTeOD5Q3a/FqIh60516csqjY=";
+            tags = [
+              "fts5"
+              "semver"
+            ];
+            env.CGO_ENABLED = "1";
+            buildInputs = [ prev.sqlite ] ++ prev.lib.optionals prev.stdenv.isDarwin [ prev.apple-sdk_14 ];
+          };
+        })
+      ];
       supportedSystems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -41,7 +66,8 @@
               # TODO check if go needs to be installed - if yes: consider moving to golang
               # https://risor.io
               # FIXME does not contain aws, k8s
-              # risor
+              risor
+              rsx
               # If shell scripting then with style
               gum
               # Prerequisite to install RSX
@@ -54,21 +80,8 @@
             # NOTE Not supported by direnv!
             # https://discourse.nixos.org/t/how-to-define-alias-in-shellhook/15299
             shellHook = ''
-              echo "INFO :: Build risor with all available modules"
-              TMPDIR_RISOR=$(mktemp -d --tmpdir=/tmp)
-              echo ".build folder: $TMPDIR_RISOR"
-              git clone https://github.com/risor-io/risor.git $TMPDIR_RISOR
-              cd $TMPDIR_RISOR
-              go install -tags=aws,carbon,cli,jmespath,k8s,pgx,semver,s3fs,template,uuid .
-
               echo "INFO :: Configure autocompletion for Bash"
               source <(risor completion bash)
-
-              echo "INFO Setup risor script bundler with external library support: RSX"
-              CGO_ENABLED=1 go install --tags fts5,semver github.com/rubiojr/rsx@latest
-
-              #echo "INFO :: cleanup temporary folder"
-              #rm -rf $TMPDIR_RISOR
             '';
           };
         }

@@ -1,0 +1,228 @@
+flakes/shell/flake.nix
+  c0c8733a6cc43db0 12-37
+  cede56761312185c 69-70
+flakes/shell/devenv.nix
+  40cf8b7f81e07acb 26
+  29cb025b20bdaad9 46
+  8ca7ad4193c6502a 24
+  a4439b28d4d44ac8 35
+  96412b74c54a0faa 11
+  802570e2973d8758 15
+  2db1b5027c70985b 74-75
+  8a728c6e4f87db7d 12-14,16-23,25,27-34,36-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.18",
+  "base_commit_sha": "adfe72519398ce72e2724df5d27e880e672b6890",
+  "prompts": {
+    "19dbec6984d469e5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c5f894b5ffeh0szL2WoPQcjdI-0aa5f400-13db-45c0-a5d1-ce325bf37cd9",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 21,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    },
+    "20d644d9d24b1247": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c5f894b5ffeh0szL2WoPQcjdI-8771e906-caf0-42b3-a30f-43cd28db8905",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 12,
+      "total_deletions": 0,
+      "accepted_lines": 12,
+      "overriden_lines": 0
+    },
+    "230f75bf1d86ccb6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c723dd6bffe75lbioULlcbx1N-f4ff0aae-3188-4dd7-a9e0-1dcb873e2816",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 50,
+      "total_deletions": 0,
+      "accepted_lines": 49,
+      "overriden_lines": 0
+    },
+    "29cb025b20bdaad9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c723dd6bffe75lbioULlcbx1N-dc0c30f8-eacb-4493-b1fe-7d16f920df9e",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 0,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    },
+    "2db1b5027c70985b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c5f894b5ffeh0szL2WoPQcjdI-ecb0bcac-b850-4f3a-a5f9-bf718d8a0ccb",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 2,
+      "total_deletions": 0,
+      "accepted_lines": 2,
+      "overriden_lines": 0
+    },
+    "35ddf621719b2147": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c5f894b5ffeh0szL2WoPQcjdI-9e5dd9a5-11f9-4ade-94e1-a9efda0a39b9",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 6,
+      "total_deletions": 0,
+      "accepted_lines": 6,
+      "overriden_lines": 0
+    },
+    "40cf8b7f81e07acb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c5f894b5ffeh0szL2WoPQcjdI-d53dbad7-2b6c-458d-b222-095ffe024996",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    },
+    "41b6f1d02aa94cfa": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c5f894b5ffeh0szL2WoPQcjdI-8358d142-4ae7-4c06-b7bf-289df07b93cd",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 4,
+      "total_deletions": 0,
+      "accepted_lines": 4,
+      "overriden_lines": 0
+    },
+    "79e7fcc15790419a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c723dd6bffe75lbioULlcbx1N-28f65f3d-eb05-4490-b0f9-c2f0d61d1f5c",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    },
+    "802570e2973d8758": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c5f894b5ffeh0szL2WoPQcjdI-7a1700e2-5503-4e27-a02a-27ab4540dd4d",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    },
+    "8a728c6e4f87db7d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c5f894b5ffeh0szL2WoPQcjdI-267b4312-bd23-477b-96fd-f5988de2dd1c",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 29,
+      "total_deletions": 0,
+      "accepted_lines": 24,
+      "overriden_lines": 0
+    },
+    "8ca7ad4193c6502a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c5f894b5ffeh0szL2WoPQcjdI-597bcad1-c117-4739-b24a-e1166e881cc6",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    },
+    "96412b74c54a0faa": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c5f894b5ffeh0szL2WoPQcjdI-163dce73-7183-49ab-a19f-a33f3f57a4ec",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    },
+    "a4439b28d4d44ac8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c5f894b5ffeh0szL2WoPQcjdI-870860d3-f5ca-4299-b9bd-efc994d3eaa7",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    },
+    "c0c8733a6cc43db0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c5f894b5ffeh0szL2WoPQcjdI-e3f408e4-4418-48cc-add7-2bd0cefc4019",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 26,
+      "total_deletions": 1,
+      "accepted_lines": 26,
+      "overriden_lines": 0
+    },
+    "cede56761312185c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_2c5f894b5ffeh0szL2WoPQcjdI-1f816507-ca22-4251-af2c-030c88057192",
+        "model": "unknown"
+      },
+      "human_author": "Matthias Scholz <matthias.scholz@thoughtworks.com>",
+      "messages": [],
+      "total_additions": 2,
+      "total_deletions": 14,
+      "accepted_lines": 2,
+      "overriden_lines": 0
+    }
+  }
+}

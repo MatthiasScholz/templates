@@ -54,6 +54,10 @@
     open http://localhost:$OPENCODE_DASHBOARD_PORT
   '';
 
+  scripts.opencode-profile.exec = ''
+    ocx oc -p $OPENCODE_PROFILE
+  '';
+
   # Skills
   # SEE: https://skills.sh
   scripts.skill-list.exec = ''
@@ -77,6 +81,7 @@
     echo INFO :: opencode environment setup
     echo "opencode version $(opencode --version)"
     echo NOTE to configure opencode you can set:
+    echo export OPENCODE_PROFILE="default";
     echo export OPENCODE_CONFIG_DIR="~/.config/opencode/profiles/default";
     echo export OPENCODE_PORT=53053
     echo export OPENCODE_DASHBOARD_PORT=53050

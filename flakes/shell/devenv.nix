@@ -38,17 +38,18 @@
       git clone https://github.com/risor-io/risor.git $TMPDIR_RISOR
       cd $TMPDIR_RISOR
       go install -tags=aws,carbon,cli,jmespath,k8s,pgx,semver,s3fs,template,uuid .
+      cp risor ~/bin/
     '';
   };
   # Setup risor script bundler with external library support: RSX"
   tasks."risor:rsx" = {
-    exec = ''CGO_ENABLED=1 go install --tags fts5,semver github.com/rubiojr/rsx@latest'';
+    exec = "CGO_ENABLED=1 go install --tags fts5,semver github.com/rubiojr/rsx@latest";
   };
 
   # Completion
   # FIXME compdef: command not found
   tasks."zsh:risor" = {
-    exec = ''source <(risor completion zsh)'';
+    exec = "source <(risor completion zsh)";
   };
 
   # Module introduction

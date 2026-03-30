@@ -10,8 +10,21 @@
 {
   overlays = [
     (final: prev: {
+      # NOTE Ensure no v2 version is used - missing devops tooling
       risor = prev.risor.overrideAttrs (oldAttrs: {
-        buildFlags = [ "-tags=aws,carbon,cli,jmespath,k8s,pgx,semver,s3fs,template,uuid" ];
+        version = "full-v1.8.1";
+        tags = (oldAttrs.tags or [ ]) ++ [
+          "aws"
+          "carbon"
+          "cli"
+          "jmespath"
+          "k8s"
+          "pgx"
+          "semver"
+          "s3fs"
+          "template"
+          "uuid"
+        ];
         vendorHash = "sha256-yVvryqPB35Jc3MXIJyRlFhAHU8H8PmSs60EO/JABHDs=";
       });
       rsx = prev.buildGoModule {
@@ -41,7 +54,7 @@
 
   # https://devenv.sh/packages/
   packages = [
-    # Scripting Languages
+    # Scripting Languages - uses the overlays
     pkgs.risor
     pkgs.rsx
     # Static Code Analysis

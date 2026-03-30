@@ -1,0 +1,38 @@
+flakes/k8s/devenv.nix
+  44acc97952602e92 10-11,14-19,21,23-27,44,50,53
+  ae81438712877761 13
+  2f02079173a324ba 12
+  402878308d405a87 20
+  e58144384773f7b0 22
+flakes/terraform-provider/flake.nix
+  d1a2c4978ff20d11 10
+  71bdcea5f96feda2 21
+  a124e5d96b414d5c 33
+  0e2b28cbf1b3153c 11-20,22,24-32,34,36-39
+  0f3c4d07a63c83e3 23
+  98259545756f9601 35
+  050344ff56f5e862 72-75,78
+flakes/aws/devenv.nix
+  bf560538797a1776 22-24,27-35,37,39-47,49,51-53,58
+  3a69a87df219ce1b 48
+  e8392000ca97f9f6 50
+  fee1862c16b86544 36
+  94b05f745ff93067 38
+flakes/go/devenv.nix
+  eec5edc9206c4da6 48-53
+flakes/go/flake.nix
+  69aea6eb707b60df 63-65
+flakes/k8s/flake.nix
+  44a6e7a771afbe6f 15
+  8ac359ec9def233a 11
+  fb70b25ffb3d3380 59-60
+  f51bfc47f90d8209 12-14,16-21,23,25-28
+  4af43deb7545e083 24
+  c1eeddb310aad53e 22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23",
+  "base_commit_sha": "632c652c964f6f8aa8cec8c34d50c2a82b0b0ba8",
+  "prompts": {}
+}

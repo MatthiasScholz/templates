@@ -8,8 +8,24 @@
     { self, nixpkgs }:
     let
       # Need go compiler to install some handy tools not available in the nixpkgs
-      goVersion = 24;
-      overlays = [ (final: prev: { go = prev."go_1_${toString goVersion}"; }) ];
+      goVersion = 25;
+      overlays = [
+        (final: prev: {
+          go = prev."go_1_${toString goVersion}";
+          kratix-cli = (final.buildGoModule.override { go = final.go; }) {
+            pname = "kratix-cli";
+            version = "unstable-2026-03-30";
+            src = prev.fetchFromGitHub {
+              owner = "syntasso";
+              repo = "kratix-cli";
+              rev = "3f75baeb481f5fd8dc6d4462164cda578f7302e4";
+              hash = "sha256-3hRSHO1Hmz7jAlRW3d3qki1JcfDx323bjnCwjUqSZPU=";
+            };
+            vendorHash = "sha256-UXQoxRsjIM7VjluSm0zM2etPMDMpcbqF/FqsdOhasUM=";
+            subPackages = [ "cmd/kratix" ];
+          };
+        })
+      ];
       supportedSystems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -40,8 +56,8 @@
               # Cluster Management
               k9s
               lens
-              # Install additional tools not available in nixpkgs
-              go
+              # Kratix CLI
+              kratix-cli
               # Kratix local development
               minio-client
               # Required to run the Kratix CLI test suite
@@ -54,8 +70,6 @@
             # https://discourse.nixos.org/t/how-to-define-alias-in-shellhook/15299
             shellHook = ''
               source <(kubectl completion bash)
-              echo "Install Kratix CLI - for platform development use case on top of K8s"
-              go install github.com/syntasso/kratix-cli/cmd/kratix@latest
               source <(kratix completion bash)
             '';
           };

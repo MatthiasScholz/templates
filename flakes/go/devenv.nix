@@ -41,21 +41,16 @@
     pkgs.graphviz
   ];
 
-  # HACK install delve via go
-  #      because emacs dap-mode does not recognize
-  #      direnv installed delve and defaults to $HOME/go/bin"
-  tasks."debug:delve" = {
-    exec = ''
-      echo "HACK :: install delve using go install"
-      go install github.com/go-delve/delve/cmd/dlv@latest
-    '';
-    after = [ "devenv:enterShell" ];
-  };
-
   # Module introduction
   enterShell = ''
     echo INFO :: go environment setup
     echo "go version $(go version)"
+
+    # HACK symlink delve to ~/go/bin
+    #      because emacs dap-mode does not recognize
+    #      direnv installed delve and defaults to $HOME/go/bin"
+    mkdir -p ~/go/bin
+    ln -sf ${pkgs.delve}/bin/dlv ~/go/bin/dlv
   '';
 
   # https://devenv.sh/tests/

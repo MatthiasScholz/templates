@@ -25,3 +25,4 @@ imports:
   - devenv-modules/flakes/js
   - devenv-modules/flakes/opencode
   - devenv-modules/flakes/opa
+  - devenv-modules/flakes/github

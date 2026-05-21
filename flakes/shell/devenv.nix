@@ -13,6 +13,12 @@
       # NOTE Ensure no v2 version is used - missing devops tooling
       risor = prev.risor.overrideAttrs (oldAttrs: {
         version = "full-v1.8.1";
+        src = prev.fetchFromGitHub {
+          owner = "risor-io";
+          repo = "risor";
+          rev = "v1.8.1";
+          hash = "sha256-Vw0fslKtBGdL6BjzNYzGRneQ+jtNDvAymlUxNa0lKZ8=";
+        };
         tags = (oldAttrs.tags or [ ]) ++ [
           "aws"
           "carbon"

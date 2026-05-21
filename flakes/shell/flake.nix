@@ -13,14 +13,27 @@
         (final: prev: {
           go = prev."go_1_${toString goVersion}";
           risor = prev.risor.overrideAttrs (oldAttrs: {
+            version = "1.8.1";
             src = prev.fetchFromGitHub {
               owner = "risor-io";
               repo = "risor";
               rev = "v1.8.1";
               hash = "sha256-Vw0fslKtBGdL6BjzNYzGRneQ+jtNDvAymlUxNa0lKZ8=";
             };
-            buildFlags = [ "-tags=aws,carbon,cli,jmespath,k8s,pgx,semver,s3fs,template,uuid" ];
+            tags = [
+              "aws"
+              "carbon"
+              "cli"
+              "jmespath"
+              "k8s"
+              "pgx"
+              "semver"
+              "s3fs"
+              "template"
+              "uuid"
+            ];
             vendorHash = "sha256-yVvryqPB35Jc3MXIJyRlFhAHU8H8PmSs60EO/JABHDs=";
+            proxyVendor = true;
           });
           rsx = prev.buildGoModule {
             pname = "rsx";

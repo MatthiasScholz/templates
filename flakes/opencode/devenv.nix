@@ -6,6 +6,17 @@
   ...
 }:
 
+let
+  # TODO Move back to pkgs.bun once 1.3.14 is supported
+  # Override Bun to use version 1.3.14 to match package.json packageManager requirement
+  bun = pkgs.bun.overrideAttrs (oldAttrs: rec {
+    version = "1.3.14";
+    src = pkgs.fetchurl {
+      url = "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-darwin-aarch64.zip";
+      hash = "sha256-2LliIYKK1vl6x6wKt+lYcjQa92MAHogD6CZ2UsJlJiA=";
+    };
+  });
+in
 {
   # FIXME Make the port configurable on a use basis, but provide a default
   # NOTE: everyone should us a different port to avoid collision when running multiple opencode instances
@@ -16,7 +27,8 @@
 
   # https://devenv.sh/packages/
   packages = [
-    pkgs.bun
+    #pkgs.bun
+    bun
     # npx
     pkgs.nodejs_22
   ];

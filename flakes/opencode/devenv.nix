@@ -31,6 +31,9 @@ in
     bun
     # npx
     pkgs.nodejs_22
+    # Reduce token consumption of cli outputs
+    # https://github.com/rtk-ai/rtk
+    pkgs.rtk
   ];
 
   # https://devenv.sh/processes/
@@ -56,6 +59,11 @@ in
   # https://devenv.sh/scripts/
   scripts.opencode-setup-plugin.exec = ''
     bunx oh-my-opencode install
+  '';
+
+  scripts.opencode-setup-tooling.exec = ''
+    rtk init --opencode
+    echo INFO :: Consider running 'rtk init -g --opencode' for global setup in your ~/.config/opencode folder.
   '';
 
   scripts.opencode-web-open.exec = ''

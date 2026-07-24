@@ -20,6 +20,9 @@
     # Structured file processing
     pkgs.jq
     pkgs.fx
+    pkgs.yq
+    pkgs.yamlint
+    pkgs.yamlfmt
     # REST API interaction and testing
     pkgs.restish
     pkgs.hurl

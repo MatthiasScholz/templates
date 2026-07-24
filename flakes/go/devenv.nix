@@ -28,6 +28,7 @@
     pkgs.wgo
     # Static Code Analysis
     pkgs.golangci-lint
+    pkgs.govulncheck
     # Testing
     pkgs.gotests
     pkgs.gotestsum

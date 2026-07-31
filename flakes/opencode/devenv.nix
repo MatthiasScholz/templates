@@ -33,7 +33,8 @@ in
     pkgs.nodejs_22
     # Reduce token consumption of cli outputs
     # https://github.com/rtk-ai/rtk
-    pkgs.rtk
+    # FIXME version v0.43 build is broken
+    # pkgs.rtk
   ];
 
   # https://devenv.sh/processes/

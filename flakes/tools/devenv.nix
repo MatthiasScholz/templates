@@ -21,7 +21,7 @@
     pkgs.jq
     pkgs.fx
     pkgs.yq
-    pkgs.yamlint
+    pkgs.yamllint
     pkgs.yamlfmt
     # REST API interaction and testing
     pkgs.restish

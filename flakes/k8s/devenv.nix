@@ -28,6 +28,9 @@
   # https://devenv.sh/packages/
   packages = [
     pkgs.kubectl
+    pkgs.kubeconform
+    # Plugin management
+    pkgs.krew
     pkgs.kubernetes-helm
     # Simplify YAML handling
     pkgs.yq-go

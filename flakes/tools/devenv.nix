@@ -23,6 +23,7 @@
     pkgs.yq
     pkgs.yamllint
     pkgs.yamlfmt
+    pkgs.yaml-language-server
     # REST API interaction and testing
     pkgs.restish
     pkgs.hurl

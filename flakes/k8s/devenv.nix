@@ -31,7 +31,10 @@
     pkgs.kubeconform
     # Plugin management
     pkgs.krew
+    # Helm
     pkgs.kubernetes-helm
+    pkgs.kubernetes-helmPlugins.helm-diff
+    pkgs.kubernetes-helmPlugins.helm-schema
     # Simplify YAML handling
     pkgs.yq-go
     # Local Development using KinD
